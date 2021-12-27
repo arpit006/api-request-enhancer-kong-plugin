@@ -1,0 +1,30 @@
+GET http://localhost:8000/
+Accept: application/json
+Host: example.com
+
+###
+###
+# curl -i -X POST --url http://localhost:8001/services/ --data 'name=example-service' --data 'url=http://konghq.com'
+POST http://localhost:8001/services/
+Content-Type: application/x-www-form-urlencoded
+
+name=example-service&url=http://konghq.com
+
+###
+# curl -i -X POST --url http://localhost:8001/services/example-service/routes --data 'hosts[]=example.com'
+POST http://localhost:8001/services/example-service/routes
+Content-Type: application/x-www-form-urlencoded
+
+hosts[]=example.com
+
+###
+
+# curl -i -X POST --url http://localhost:8001/services/example-service/plugins/ --data 'name=gateway-plugin'
+POST http://localhost:8001/services/example-service/plugins/
+Content-Type: application/x-www-form-urlencoded
+
+name=api-request-enhancer
+
+###
+
+
